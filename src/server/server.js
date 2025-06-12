@@ -22,9 +22,19 @@ app.use(
     bodyParser.urlencoded({extended:true}),
     bodyParser.json()
 );
-app.listen(port,console.info("Server running, listening on port ", port));
 
 authenticationRoute(app);
+
+// Only start the server if we're not in test mode
+if (process.env.NODE_ENV !== 'test') {
+    const server = app.listen(port, () => console.info("Server running, listening on port", port));
+    // Proper shutdown handling
+    process.on('SIGTERM', () => {
+        server.close(() => {
+            console.log('Server shutting down');
+        });
+    });
+}
 
 if (process.env.NODE_ENV == `production`) {
     app.use(express.static(path.resolve(__dirname,'../../dist')));
@@ -54,3 +64,5 @@ app.post('/comment/new',async (req,res)=>{
     await collection.insertOne(comment);
     res.status(200).send();
 });
+
+module.exports = { app };
