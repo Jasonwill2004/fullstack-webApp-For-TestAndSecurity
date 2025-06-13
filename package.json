@@ -15,7 +15,10 @@
     "test": "jest",
     "test:unit": "cross-env NODE_ENV=test jest tests/unit",
     "test:integration": "cross-env NODE_ENV=test jest tests/integration",
-    "test:coverage": "cross-env NODE_ENV=test jest --coverage"
+    "test:coverage": "cross-env NODE_ENV=test jest --coverage",
+    "test:selenium": "node tests/selenium/run-all-tests.js",
+    "test:selenium:login": "node tests/selenium/login.test.js",
+    "test:selenium:signup": "node tests/selenium/signup.test.js"
   },
   "keywords": [
     "react",
@@ -42,6 +45,7 @@
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
     "redux-saga": "^0.16.2",
+    "selenium-webdriver": "^4.33.0",
     "uuid": "^3.3.2",
     "webpack": "^4.17.2"
   },
