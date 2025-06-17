@@ -21,7 +21,11 @@
     "test:selenium:signup": "node tests/selenium/signup.test.js",
     "test:schema": "cross-env NODE_ENV=test jest tests/integration/schema-validation.test.js",
     "test:api-schema": "cross-env NODE_ENV=test jest tests/integration/api-schema-validation.test.js",
-    "test:schema-all": "cross-env NODE_ENV=test jest tests/integration/schema-validation.test.js tests/integration/api-schema-validation.test.js"
+    "test:schema-all": "cross-env NODE_ENV=test jest tests/integration/schema-validation.test.js tests/integration/api-schema-validation.test.js",
+    "test:performance": "k6 run performance/loadtest.js",
+    "test:performance:debug": "k6 run --verbose performance/loadtest.js",
+    "test:performance:smoke": "k6 run --vus 1 --duration 30s performance/loadtest.js",
+    "test:all": "npm run test:unit && npm run test:integration && npm run test:selenium && npm run test:performance:smoke"
   },
   "keywords": [
     "react",
@@ -68,6 +72,7 @@
     "highground": "^1.0.3-beta",
     "jest": "^26.6.3",
     "jest-environment-node": "^26.6.2",
+    "k6": "^0.0.0",
     "mongodb": "^3.1.10",
     "mongodb-memory-server": "^8.16.0",
     "nodemon": "^1.18.4",
