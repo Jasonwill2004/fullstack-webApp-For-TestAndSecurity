@@ -1,14 +1,6 @@
-# Full Stack React Express Application
+# Week 4 of Zolvit Bootcamp
 
-## Introduction
-This repository contains a simple Full Stack Express / React application. It is intended to demonstrate as wide an array of features as possible while still keeping the app simple and easy to understand.
- 
- This application accompanies the course on Pluralsight Building a Full Stack Application with Express and React [Note: Add link].
- 
- This application consists of Front End component (located in the `app` directory) that is built with Redux and React. It also has a Back End component (located in the `server` directory) that uses Express to manage
-
-## Installation
-First, install the programs required to run the application:
+## [videoWalkthrough](https://drive.google.com/file/d/1aKcofxeKc9aRWBd0n1toSAFasgr4i7J-/view?usp=sharing)
 
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 - [Node.js](https://nodejs.org/en/download/)
